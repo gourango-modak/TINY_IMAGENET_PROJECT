@@ -12,7 +12,7 @@ class DeeperGoogLeNet:
             convName = name + "_conv"
             bnName = name + "_bn"
             actName = name + "_act"
-        model = Conv2D(K, (KX, KY), padding=padding, strides=stride, kernel_regularizer=l2(reg), name=convName)(model)
+        model = Conv2D(K, (kX, kY), padding=padding, strides=stride, kernel_regularizer=l2(reg), name=convName)(model)
         model = BatchNormalization(axis=chanDim, name=bnName)(model)
         model = Activation('relu', name=actName)(model)
 
@@ -48,7 +48,7 @@ class DeeperGoogLeNet:
             chanDim = 1
         
         # define model input layer, followed by conv => Pooling => 2*conv => Pooling
-        inputs = Model(input=inputShape)
+        inputs = Input(shape=inputShape)
         model = DeeperGoogLeNet.conv_model(inputs, 64, 5, 5, (1, 1), chanDim, reg=reg, name="block_1")
         model = MaxPool2D((3, 3), (2, 2), name="pool_1", padding="Same")(model)
         
@@ -80,6 +80,6 @@ class DeeperGoogLeNet:
         model = Activation("softmax", name="softmax")(model)
 
         # create model
-        model = Model(input=inputs, output=model, name="GoogLeNet")
+        model = Model(inputs=inputs, outputs=model, name="GoogLeNet")
 
         return model

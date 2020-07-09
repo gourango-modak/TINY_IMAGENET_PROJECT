@@ -50,8 +50,8 @@ for (dType, paths, labels, output) in datasets:
     write = HDF5DatasetWriter(output, (len(paths), 64, 64, 3))
 
     # build a progressbar
-    widgets = ["Building Dataset: ", progressbar.Percentage()," ", progressbar.Bar()," ", progressbar.ETA()]
-    pbar = progressbar.ProgressBar(maxval=(len(paths), widgets=widgets)).start()
+    widget = ["Building Dataset: ", progressbar.Percentage()," ", progressbar.Bar()," ", progressbar.ETA()]
+    pbar = progressbar.ProgressBar(maxval=len(paths), widgets=widget).start()
 
     # load each images from paths
     for (i,(image, label)) in enumerate(zip(paths, labels)):
