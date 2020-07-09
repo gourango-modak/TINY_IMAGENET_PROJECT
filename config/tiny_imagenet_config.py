@@ -31,4 +31,3 @@ FIG_PATH = "F:\ML_Practice_Project\Tiny ImageNet\TINY_IMAGENET_PROJECT\output\\t
 
 # define path to store classification report 
 JSON_PATH = "F:\ML_Practice_Project\Tiny ImageNet\TINY_IMAGENET_PROJECT\output\\tiny_imagenet.json"
-

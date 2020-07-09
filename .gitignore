@@ -8,3 +8,4 @@ preprocessing/__pycache__/imagetoarraypreprocessor.cpython-36.pyc
 preprocessing/__pycache__/meanpreprocessor.cpython-36.pyc
 preprocessing/__pycache__/simplepreprocessor.cpython-36.pyc
 utils/__pycache__/ranked.cpython-36.pyc
+nn/__pycache__/resnet.cpython-36.pyc
